@@ -1,3 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-color: #4abdac;
+  --grey-color: #dfdce3;
+  --red-color: #fc4a1a;
+  --yellow-color: #f7b733;
+}
+
 .App {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
+}
+
+.user-logged-in {
+  display: flex;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.back-btn {
+  width: 80px;
+  height: 40px;
+  background-color: var(--green-color);
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  outline: none;
+}
+
+.loader {
+  margin: 0 auto;
 }

@@ -2,7 +2,7 @@
 const session = require("express-session");
 
 // require mongostore (if you need it)
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo").default;
 
 // require mongoose (you need it only if you need mongostore)
 const mongoose = require("mongoose");
@@ -20,8 +20,8 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: true,
       cookie: { maxAge: 86400000 },
-      store: new MongoStore({
-        mongooseConnection: mongoose.connection,
+      store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI,
         ttl: 60 * 60 * 24, // 1 day
       }),
     })

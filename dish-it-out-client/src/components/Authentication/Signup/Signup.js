@@ -9,7 +9,7 @@ const Signup = () => {
         <h1>Join Now!</h1>
         <div className="inner-form-container">
           <div>
-            {/* <label htmlFor="username">Username:</label> */}
+            <label htmlFor="username"></label>
             <input
               id="username"
               name="username"
@@ -21,7 +21,7 @@ const Signup = () => {
           </div>
 
           <div>
-            {/* <label htmlFor="email">Email:</label> */}
+            <label htmlFor="email"></label>
             <input
               id="email"
               name="email"
@@ -33,7 +33,7 @@ const Signup = () => {
           </div>
 
           <div>
-            {/* <label htmlFor="password">Password:</label> */}
+            <label htmlFor="password"></label>
             <input
               id="password"
               name="password"
@@ -45,7 +45,9 @@ const Signup = () => {
           </div>
         </div>
         <div>
-          <Link to="/login-page">Already Registered?</Link>
+          <Link to="/login" id="login-link">
+            Already Registered?
+          </Link>
         </div>
         <button>Create Account</button>
       </form>

@@ -30,9 +30,6 @@ const Login = () => {
             // onChange={handleLoginInput}
           />
         </div>
-        <div>
-          <Link to="/login-page">Forgot Password?</Link>
-        </div>
 
         <button>Login</button>
       </form>

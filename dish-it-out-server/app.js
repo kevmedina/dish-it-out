@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
@@ -15,9 +14,6 @@ const debug = require("debug")(
 
 const app = express();
 
-// require database configuration
-require("./configs/db.config");
-
 // Cross-Origin Resource Sharing
 // This needs to be set up on the front end sideas well; in axios withCredentials: true
 app.use(
@@ -29,15 +25,17 @@ app.use(
 
 // Middleware Setup
 app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// require database configuration
+require("./configs/db.config");
 
 // make sure express- session is used before the passport
 require("./configs/session.config")(app);
 
 // Express View engine setup
-
 app.use(
   require("node-sass-middleware")({
     src: path.join(__dirname, "public"),
